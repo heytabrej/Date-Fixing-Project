@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Yeeyy ! Finally</h1>
+      </div>
+      <div class="gif_container">
+        <img
+          src="https://i.postimg.cc/wTDG30TB/yes.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <button class="btn" id="yesButton" onclick="openGoogleCalendar()">
+        Let's Fix a Date
+      </button>
+    </div>
+
+    <script>
+      function openGoogleCalendar() {
+        // Create a Google Calendar link with parameters
+        var eventDetails = {
+          text: 'Lets Go for Date !! ',  // Event title
+          dates: '20230101T120000/20230101T130000',  // Event time (in UTC)
+          details: 'Meeting to Discuss for Future',  // Event details
+          location: 'Coffee Shop',  // Event location
+        };
+
+        var googleCalendarLink = 'https://www.google.com/calendar/render?action=TEMPLATE';
+        googleCalendarLink += '&text=' + encodeURIComponent(eventDetails.text);
+        googleCalendarLink += '&dates=' + encodeURIComponent(eventDetails.dates);
+        googleCalendarLink += '&details=' + encodeURIComponent(eventDetails.details);
+        googleCalendarLink += '&location=' + encodeURIComponent(eventDetails.location);
+
+        // Redirect to the Google Calendar link
+        window.location.href = googleCalendarLink;
+      }
+    </script>
+  </body>
+</html>
